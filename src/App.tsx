@@ -22,7 +22,13 @@ export default function App() {
       >
         모든 페이지 삭제
       </Button>
-      <Footer>@071yoon</Footer>
+      <Footer
+        onClick={() => {
+          window.open("http://github.com/071yoon");
+        }}
+      >
+        @071yoon
+      </Footer>
     </Container>
   );
 }
@@ -43,7 +49,7 @@ const Header = styled.h1`
 `;
 
 const Paragraph = styled.p`
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   margin: 0rem;
   color: #555;
 `;
@@ -62,4 +68,10 @@ const Footer = styled.footer`
   display: flex;
   justify-content: right;
   color: #888;
+
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
