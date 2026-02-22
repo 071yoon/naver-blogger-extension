@@ -2,7 +2,7 @@
   "name": "Naver Blogger Extension",
   "description": "Chrome Extension for Naver Bloggers",
   "manifest_version": 3,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "permissions": ["activeTab", "scripting"],
   "icons": {
     "16": "icon16.png",
