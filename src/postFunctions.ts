@@ -14,10 +14,22 @@ export const likeAllLikablePosts = () => {
             const post = posts[i];
 
             const likeButton = post.querySelector(
-              ".u_likeit_list_btn"
+              ".u_likeit_button",
             ) as HTMLAnchorElement;
             if (likeButton?.getAttribute("aria-pressed") === "false") {
-              likeButton.click();
+              likeButton.dispatchEvent(
+                new MouseEvent("mousedown", {
+                  bubbles: true,
+                }),
+              );
+
+              setTimeout(() => {
+                likeButton.dispatchEvent(
+                  new MouseEvent("mouseup", {
+                    bubbles: true,
+                  }),
+                );
+              }, 100);
             }
           }
         },
@@ -43,7 +55,7 @@ export const deleteAllPostsInTab = () => {
             const post = posts[i];
 
             const delButton = post.querySelector(
-              ".button_del_post"
+              ".button_del_post",
             ) as HTMLAnchorElement;
             if (delButton) {
               delButton.click();
